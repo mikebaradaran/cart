@@ -14,7 +14,14 @@ function App() {
   ];
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    for (let item of cartItems) {
+      if (item.product.id == product.id) {
+        item.quantity++;
+        setCartItems([...cartItems]);
+        return;
+      }
+    }
+    setCartItems([...cartItems, { "product": product, "quantity": 1 }]);
   };
 
   return (

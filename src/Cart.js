@@ -11,7 +11,8 @@ function Cart({ cartItems }) {
           <ul>
             {cartItems.map((item, index) => (
               <li key={index}>
-                {item.name} - ${item.price.toFixed(2)}
+                Quantity:{item.quantity} - 
+                {item.product.name} - ${item.product.price.toFixed(2) }
               </li>
             ))}
           </ul>
